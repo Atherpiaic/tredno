@@ -10,6 +10,7 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
+    useUnifiedTopology: true,
   })
   .then((con) => {
     console.log('DB connection successful!');
@@ -29,6 +30,7 @@ process.on('unhandledRejection', (err) => {
 });
 
 process.on('uncaughtException', (err) => {
+  console.log(err);
   console.log('UNCAUGHT EXCCEPTION!, Shutting down...');
 
   process.exit(1);
